@@ -6,20 +6,28 @@
 //
 
 import SwiftUI
+import AppKit
 
 @main
-struct TrackyApp: App {
+struct AttentionTrackerApp: App {
+    
+    let activityManager = ActivityTrackingManager()
+    let cameraManager = CameraTrackingManager()
+    let menuBarController: MenuBarController
+    
+    init() {
+        menuBarController = MenuBarController(activityManager: activityManager)
+        // Integrate camera tracking with activity tracking
+        activityManager.integrateCamera(cameraManager)
+    }
+
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .preferredColorScheme(.dark)
-        }
-    }
-}
-
-extension NSTextField{
-    open override var focusRingType: NSFocusRingType {
-        get{return .none}
-        set{}
+                    DashboardView(
+                        activityManager: activityManager,
+                        cameraManager: cameraManager
+                    )
+                }
     }
 }

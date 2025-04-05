@@ -7,20 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0BE6722DA0F79900E29CEB /* AttentionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6712DA0F78A00E29CEB /* AttentionRecord.swift */; };
+		1B0BE6742DA0F7C100E29CEB /* ActivityTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */; };
+		1B0BE6762DA0F81400E29CEB /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6752DA0F80B00E29CEB /* OpenAIService.swift */; };
+		1B0BE6782DA0F83700E29CEB /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */; };
+		1B0BE67A2DA0F86E00E29CEB /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6792DA0F86700E29CEB /* Dashboard.swift */; };
+		1B0BE67E2DA102A900E29CEB /* CameraTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */; };
 		1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */; };
 		1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9C12C3E22CB00F79670 /* ContentView.swift */; };
 		1B13E9C42C3E22CD00F79670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B13E9C32C3E22CD00F79670 /* Assets.xcassets */; };
 		1B13E9C72C3E22CD00F79670 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B13E9C62C3E22CD00F79670 /* Preview Assets.xcassets */; };
 		1B13E9D12C3E25E800F79670 /* SavedModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9D02C3E25E800F79670 /* SavedModel.mlmodel */; };
-		1B760F922C41B10100C879E8 /* VideoFeedVM .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B760F912C41B10100C879E8 /* VideoFeedVM .swift */; };
-		1B760F942C43418300C879E8 /* CreateActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B760F932C43418300C879E8 /* CreateActivityView.swift */; };
-		1B760F962C436F4400C879E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B760F952C436F4400C879E8 /* HomeView.swift */; };
-		1B760F9A2C44422D00C879E8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B760F992C44422D00C879E8 /* CameraView.swift */; };
-		1B760F9C2C444CD300C879E8 /* ActivityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B760F9B2C444CD300C879E8 /* ActivityVM.swift */; };
 		1B760F9E2C44A2D400C879E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B760F9D2C44A2D400C879E8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0BE6712DA0F78A00E29CEB /* AttentionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionRecord.swift; sourceTree = "<group>"; };
+		1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackingManager.swift; sourceTree = "<group>"; };
+		1B0BE6752DA0F80B00E29CEB /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		1B0BE6792DA0F86700E29CEB /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTrackingManager.swift; sourceTree = "<group>"; };
 		1B13E9BC2C3E22CB00F79670 /* Tracky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackyApp.swift; sourceTree = "<group>"; };
 		1B13E9C12C3E22CB00F79670 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,11 +35,6 @@
 		1B13E9C62C3E22CD00F79670 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B13E9C82C3E22CD00F79670 /* Tracky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracky.entitlements; sourceTree = "<group>"; };
 		1B13E9D02C3E25E800F79670 /* SavedModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SavedModel.mlmodel; sourceTree = "<group>"; };
-		1B760F912C41B10100C879E8 /* VideoFeedVM .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoFeedVM .swift"; sourceTree = "<group>"; };
-		1B760F932C43418300C879E8 /* CreateActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityView.swift; sourceTree = "<group>"; };
-		1B760F952C436F4400C879E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		1B760F992C44422D00C879E8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
-		1B760F9B2C444CD300C879E8 /* ActivityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityVM.swift; sourceTree = "<group>"; };
 		1B760F9D2C44A2D400C879E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,9 +93,7 @@
 		1B760F8D2C40C6A700C879E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B760F932C43418300C879E8 /* CreateActivityView.swift */,
-				1B760F952C436F4400C879E8 /* HomeView.swift */,
-				1B760F992C44422D00C879E8 /* CameraView.swift */,
+				1B0BE6792DA0F86700E29CEB /* Dashboard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +101,9 @@
 		1B760F8E2C40C6B000C879E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6752DA0F80B00E29CEB /* OpenAIService.swift */,
+				1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */,
+				1B0BE6712DA0F78A00E29CEB /* AttentionRecord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,8 +111,8 @@
 		1B760F902C41B0AE00C879E8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1B760F912C41B10100C879E8 /* VideoFeedVM .swift */,
-				1B760F9B2C444CD300C879E8 /* ActivityVM.swift */,
+				1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */,
+				1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -185,14 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0BE67E2DA102A900E29CEB /* CameraTrackingManager.swift in Sources */,
 				1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */,
-				1B760F9A2C44422D00C879E8 /* CameraView.swift in Sources */,
+				1B0BE6762DA0F81400E29CEB /* OpenAIService.swift in Sources */,
+				1B0BE6722DA0F79900E29CEB /* AttentionRecord.swift in Sources */,
+				1B0BE6742DA0F7C100E29CEB /* ActivityTrackingManager.swift in Sources */,
+				1B0BE6782DA0F83700E29CEB /* MenuBarController.swift in Sources */,
+				1B0BE67A2DA0F86E00E29CEB /* Dashboard.swift in Sources */,
 				1B13E9D12C3E25E800F79670 /* SavedModel.mlmodel in Sources */,
-				1B760F9C2C444CD300C879E8 /* ActivityVM.swift in Sources */,
 				1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */,
-				1B760F962C436F4400C879E8 /* HomeView.swift in Sources */,
-				1B760F922C41B10100C879E8 /* VideoFeedVM .swift in Sources */,
-				1B760F942C43418300C879E8 /* CreateActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
