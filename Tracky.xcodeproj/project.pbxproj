@@ -13,12 +13,13 @@
 		1B0BE6782DA0F83700E29CEB /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */; };
 		1B0BE67A2DA0F86E00E29CEB /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6792DA0F86700E29CEB /* Dashboard.swift */; };
 		1B0BE67E2DA102A900E29CEB /* CameraTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */; };
+		1B0BE6852DA1D2BE00E29CEB /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */; };
+		1B0BE6872DA1D2E000E29CEB /* MusicControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */; };
+		1B0BE6982DA1DCD500E29CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */; };
 		1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */; };
 		1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9C12C3E22CB00F79670 /* ContentView.swift */; };
 		1B13E9C42C3E22CD00F79670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B13E9C32C3E22CD00F79670 /* Assets.xcassets */; };
 		1B13E9C72C3E22CD00F79670 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B13E9C62C3E22CD00F79670 /* Preview Assets.xcassets */; };
-		1B13E9D12C3E25E800F79670 /* SavedModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9D02C3E25E800F79670 /* SavedModel.mlmodel */; };
-		1B760F9E2C44A2D400C879E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B760F9D2C44A2D400C879E8 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,13 +29,15 @@
 		1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		1B0BE6792DA0F86700E29CEB /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTrackingManager.swift; sourceTree = "<group>"; };
+		1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
+		1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicControlBar.swift; sourceTree = "<group>"; };
+		1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B13E9BC2C3E22CB00F79670 /* Tracky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackyApp.swift; sourceTree = "<group>"; };
 		1B13E9C12C3E22CB00F79670 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B13E9C32C3E22CD00F79670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B13E9C62C3E22CD00F79670 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B13E9C82C3E22CD00F79670 /* Tracky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tracky.entitlements; sourceTree = "<group>"; };
-		1B13E9D02C3E25E800F79670 /* SavedModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SavedModel.mlmodel; sourceTree = "<group>"; };
 		1B760F9D2C44A2D400C879E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,10 +52,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B0BE6912DA1D72200E29CEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1B13E9B32C3E22CB00F79670 = {
 			isa = PBXGroup;
 			children = (
 				1B13E9BE2C3E22CB00F79670 /* Tracky */,
+				1B0BE6912DA1D72200E29CEB /* Frameworks */,
 				1B13E9BD2C3E22CB00F79670 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,11 +79,11 @@
 		1B13E9BE2C3E22CB00F79670 /* Tracky */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */,
 				1B760F9D2C44A2D400C879E8 /* Info.plist */,
 				1B760F902C41B0AE00C879E8 /* ViewModel */,
 				1B760F8E2C40C6B000C879E8 /* Model */,
 				1B760F8D2C40C6A700C879E8 /* Views */,
-				1B13E9D02C3E25E800F79670 /* SavedModel.mlmodel */,
 				1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */,
 				1B13E9C12C3E22CB00F79670 /* ContentView.swift */,
 				1B13E9C32C3E22CD00F79670 /* Assets.xcassets */,
@@ -93,6 +104,7 @@
 		1B760F8D2C40C6A700C879E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */,
 				1B0BE6792DA0F86700E29CEB /* Dashboard.swift */,
 			);
 			path = Views;
@@ -101,8 +113,8 @@
 		1B760F8E2C40C6B000C879E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */,
 				1B0BE6752DA0F80B00E29CEB /* OpenAIService.swift */,
-				1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */,
 				1B0BE6712DA0F78A00E29CEB /* AttentionRecord.swift */,
 			);
 			path = Model;
@@ -111,6 +123,7 @@
 		1B760F902C41B0AE00C879E8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */,
 				1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */,
 				1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */,
 			);
@@ -145,7 +158,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					1B13E9BB2C3E22CB00F79670 = {
 						CreatedOnToolsVersion = 15.4;
@@ -177,7 +190,6 @@
 			files = (
 				1B13E9C72C3E22CD00F79670 /* Preview Assets.xcassets in Resources */,
 				1B13E9C42C3E22CD00F79670 /* Assets.xcassets in Resources */,
-				1B760F9E2C44A2D400C879E8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,14 +200,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0BE6982DA1DCD500E29CEB /* AppDelegate.swift in Sources */,
+				1B0BE6852DA1D2BE00E29CEB /* SpotifyService.swift in Sources */,
 				1B0BE67E2DA102A900E29CEB /* CameraTrackingManager.swift in Sources */,
 				1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */,
+				1B0BE6872DA1D2E000E29CEB /* MusicControlBar.swift in Sources */,
 				1B0BE6762DA0F81400E29CEB /* OpenAIService.swift in Sources */,
 				1B0BE6722DA0F79900E29CEB /* AttentionRecord.swift in Sources */,
 				1B0BE6742DA0F7C100E29CEB /* ActivityTrackingManager.swift in Sources */,
 				1B0BE6782DA0F83700E29CEB /* MenuBarController.swift in Sources */,
 				1B0BE67A2DA0F86E00E29CEB /* Dashboard.swift in Sources */,
-				1B13E9D12C3E25E800F79670 /* SavedModel.mlmodel in Sources */,
 				1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +251,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7RFQ8P9BJ6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -300,7 +316,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7RFQ8P9BJ6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -327,24 +345,30 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tracky/Tracky.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracky/Preview Content\"";
-				DEVELOPMENT_TEAM = 7RFQ8P9BJ6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tracky/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "Needed to record background audio and for transcription";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to record user activity for object detection";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access for uploading images";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Need location access for updating nearby friends";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will use your location to show features near you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for uploading audio";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need photo library access for saving and uploading images";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mckiba.Tracky;
+				OTHER_LDFLAGS = "\"-ObjC\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckiba.Tracky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -357,24 +381,30 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Tracky/Tracky.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tracky/Preview Content\"";
-				DEVELOPMENT_TEAM = 7RFQ8P9BJ6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tracky/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "Needed to record background audio and for transcription";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to record user activity for object detection";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera access for uploading images";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Need location access for updating nearby friends";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app will use your location to show features near you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone access for uploading audio";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need photo library access for saving and uploading images";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mckiba.Tracky;
+				OTHER_LDFLAGS = "\"-ObjC\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mckiba.Tracky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
