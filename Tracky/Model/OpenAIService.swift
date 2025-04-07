@@ -18,7 +18,7 @@ class OpenAIService {
     private let apiKey: String
     private let endpoint = "https://api.openai.com/v1/completions"
     
-    init(apiKey: String) {
+    init() {
         self.apiKey = environment["openAI_key"]!
 
     }

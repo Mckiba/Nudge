@@ -34,9 +34,9 @@ class SpotifyService: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     private var playbackTimer: Timer?
     
-    init(clientID: String, clientSecret: String) {
-        self.clientID = clientID
-        self.clientSecret = clientSecret
+    init() {
+        self.clientID = environment["SPOTIFY_CLIENT_ID"]!
+        self.clientSecret = environment["SPOTIFY_CLIENT_SECRET"]!
         
         // Check if we already have stored credentials
         loadCredentials()
@@ -54,6 +54,8 @@ class SpotifyService: ObservableObject {
             }
         }
     }
+    
+    
     
     // MARK: - Authentication
     

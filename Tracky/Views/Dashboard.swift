@@ -287,7 +287,7 @@ struct DashboardView: View {
         }
         .onAppear {
             // Request insights when dashboard appears
-            let service = OpenAIService(apiKey: "YOUR_OPENAI_API_KEY")
+            let service = OpenAIService()
             service.analyzeAttentionPatterns(
                 records: activityManager.attentionHistory,
                 currentState: activityManager.currentState,
@@ -437,7 +437,7 @@ struct DashboardView_Previews: PreviewProvider {
         }()
         
         let spotifyService = {
-            let service = SpotifyService(clientID: "preview", clientSecret: "preview")
+            let service = SpotifyService()
             
             // Add mock data
             service.isAuthorized = true

@@ -12,10 +12,7 @@ import AppKit
 struct AttentionTrackerApp: App {
     @StateObject private var activityManager = ActivityTrackingManager()
     @StateObject private var cameraManager = CameraTrackingManager()
-    @StateObject private var spotifyService = SpotifyService(
-        clientID: "18371473c3b9422abfb89542a6922e90",
-        clientSecret: "8aa9a304e448466e8ab39830c68b9731"
-    )
+    @StateObject private var spotifyService = SpotifyService()
     
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
