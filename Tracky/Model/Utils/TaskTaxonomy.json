@@ -1,0 +1,29 @@
+
+{
+  "TaskTypeClassifier": {
+    "Reading/Consumption Tasks": [
+      "Academic Papers",
+      "Documentation",
+      "Books/Long-form Content",
+      "News/Articles"
+    ],
+    "Creation/Production Tasks": [
+      "Writing/Documentation",
+      "Programming/Coding",
+      "Design Work",
+      "Data Analysis"
+    ],
+    "Communication Tasks": [
+      "Email Processing",
+      "Messaging",
+      "Meeting Participation",
+      "Call/Video Conferences"
+    ],
+    "Planning/Organization Tasks": [
+      "Task Management",
+      "Calendar Organization",
+      "Research/Information Gathering",
+      "Decision Making"
+    ]
+  }
+}

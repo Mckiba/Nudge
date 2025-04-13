@@ -19,6 +19,8 @@
 	<array>
 		<string>spotify</string>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app needs to create and view caldendar events to keep track of productivity items </string>
 	<key>NSAppleEventsUsageDescription</key>
 	<string>This app needs to handle custom URL scheme callbacks for Spotify authentication.</string>
 </dict>

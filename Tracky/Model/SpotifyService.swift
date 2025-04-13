@@ -10,6 +10,7 @@ import Combine
 
 // MARK: - Spotify Service
 
+
 class SpotifyService: ObservableObject {
     // Authentication properties
     private let clientID: String
@@ -17,7 +18,7 @@ class SpotifyService: ObservableObject {
     private var accessToken: String?
     private var refreshToken: String?
     private var tokenExpirationDate: Date?
-    
+
     // Playback state
     @Published var isPlaying: Bool = false
     @Published var currentTrack: SpotifyTrack?
@@ -35,8 +36,8 @@ class SpotifyService: ObservableObject {
     private var playbackTimer: Timer?
     
     init() {
-        self.clientID = environment["SPOTIFY_CLIENT_ID"]!
-        self.clientSecret = environment["SPOTIFY_CLIENT_SECRET"]!
+        self.clientID = environment["spotifyClientID"]!
+        self.clientSecret = environment["spotifyClientSecret"]!
         
         // Check if we already have stored credentials
         loadCredentials()
@@ -54,8 +55,6 @@ class SpotifyService: ObservableObject {
             }
         }
     }
-    
-    
     
     // MARK: - Authentication
     
@@ -102,6 +101,9 @@ class SpotifyService: ObservableObject {
             return nil
         }
         
+        print("SpotifyService.extractCode: URL components: \(components)")
+        print("SpotifyService.extractCode: URL path: \(components.path)")
+        print("SpotifyService.extractCode: URL query: \(components.query ?? "nil")")
         
         // First try to get code from query items
         if let queryItems = components.queryItems {
@@ -122,6 +124,7 @@ class SpotifyService: ObservableObject {
             return
         }
         
+//        print("SpotifyService.exchangeCodeForToken: Preparing token exchange request with code")
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -156,15 +159,24 @@ class SpotifyService: ObservableObject {
                 return
             }
             
-            guard response is HTTPURLResponse else {
+            guard let httpResponse = response as? HTTPURLResponse else {
                 print("SpotifyService.exchangeCodeForToken: No HTTP response received")
                 return
             }
-              
+            
+//            print("SpotifyService.exchangeCodeForToken: Token exchange HTTP status: \(httpResponse.statusCode)")
+//            print("SpotifyService.exchangeCodeForToken: Response headers: \(httpResponse.allHeaderFields)")
+//            
             guard let data = data else {
                 print("SpotifyService.exchangeCodeForToken: No data received in token exchange")
                 return
             }
+            
+//            print("SpotifyService.exchangeCodeForToken: Received data of length: \(data.count)")
+            
+//            if let responseString = String(data: data, encoding: .utf8) {
+//                print("SpotifyService.exchangeCodeForToken: Token exchange raw response: \(responseString)")
+//            }
             
             // Try to decode the response
             do {
@@ -175,7 +187,13 @@ class SpotifyService: ObservableObject {
                 
                 let decoder = JSONDecoder()
                 let tokenResponse = try decoder.decode(SpotifyTokenResponse.self, from: data)
-               
+                print("SpotifyService.exchangeCodeForToken: Successfully decoded token response")
+                print("SpotifyService.exchangeCodeForToken: Access token: \(tokenResponse.accessToken.prefix(10))... (length: \(tokenResponse.accessToken.count))")
+                print("SpotifyService.exchangeCodeForToken: Token type: \(tokenResponse.tokenType)")
+                print("SpotifyService.exchangeCodeForToken: Expires in: \(tokenResponse.expiresIn) seconds")
+                print("SpotifyService.exchangeCodeForToken: Scope: \(tokenResponse.scope)")
+                print("SpotifyService.exchangeCodeForToken: Refresh token: \(tokenResponse.refreshToken?.prefix(10) ?? "nil")...")
+                
                 DispatchQueue.main.async {
                     print("SpotifyService.exchangeCodeForToken: Updating app state with token")
                     self?.accessToken = tokenResponse.accessToken
@@ -223,46 +241,7 @@ class SpotifyService: ObservableObject {
         }.resume()
     }
     
-    private func refreshTokenIfNeeded() {
-        guard let refreshToken = refreshToken,
-              let expirationDate = tokenExpirationDate,
-              expirationDate.timeIntervalSinceNow < 300 else { return }
-        
-        guard let url = URL(string: tokenURL) else { return }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let parameters = [
-            "grant_type": "refresh_token",
-            "refresh_token": refreshToken,
-            "client_id": clientID,
-            "client_secret": clientSecret
-        ]
-        
-        request.httpBody = parameters
-            .map { "\($0.key)=\($0.value)" }
-            .joined(separator: "&")
-            .data(using: .utf8)
-        
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        
-        URLSession.shared.dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: SpotifyTokenResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                if case .failure(let error) = completion {
-                    print("Token refresh error: \(error)")
-                }
-            }, receiveValue: { [weak self] response in
-                self?.accessToken = response.accessToken
-                self?.tokenExpirationDate = Date().addingTimeInterval(Double(response.expiresIn))
-                self?.saveCredentials()
-            })
-            .store(in: &cancellables)
-    }
-    
+
     private func saveCredentials() {
         let credentials: [String: Any] = [
             "accessToken": accessToken as Any,
@@ -283,7 +262,7 @@ class SpotifyService: ObservableObject {
         isAuthorized = accessToken != nil
         
         if isAuthorized {
-            refreshTokenIfNeeded()
+            onRefreshToken()
             fetchCurrentPlayback()
             fetchRecommendedPlaylists()
         }
@@ -586,7 +565,7 @@ class SpotifyService: ObservableObject {
                     // If we get a 401, try to refresh the token
                     if httpResponse.statusCode == 401 {
                         print("DEBUG: Token is invalid, trying to refresh...")
-                        self.tryToRefreshToken()
+                        self.onRefreshToken()
                     }
                 }
                 
@@ -610,9 +589,13 @@ class SpotifyService: ObservableObject {
         }
     }
     
-    private func tryToRefreshToken() {
-        guard let refreshToken = refreshToken else {
-            print("No refresh token available")
+    private func onRefreshToken() {
+        
+        guard let refreshToken = refreshToken,
+              let expirationDate = tokenExpirationDate else { return }
+        
+        if expirationDate.timeIntervalSinceNow > 300 {
+            print("Token still valid. Not refreshing.")
             return
         }
         
@@ -622,6 +605,9 @@ class SpotifyService: ObservableObject {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        
+        
+        print(clientID, clientSecret)
         
         let parameters = [
             "grant_type": "refresh_token",

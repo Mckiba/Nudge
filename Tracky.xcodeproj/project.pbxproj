@@ -16,6 +16,16 @@
 		1B0BE6852DA1D2BE00E29CEB /* SpotifyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */; };
 		1B0BE6872DA1D2E000E29CEB /* MusicControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */; };
 		1B0BE6982DA1DCD500E29CEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */; };
+		1B0BE69A2DA6345900E29CEB /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE6992DA6345300E29CEB /* EventStore.swift */; };
+		1B0BE69C2DA634A000E29CEB /* EventStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE69B2DA6349A00E29CEB /* EventStoreManager.swift */; };
+		1B0BE69E2DA635C000E29CEB /* CalendarEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0BE69D2DA635AB00E29CEB /* CalendarEvents.swift */; };
+		1B0F62A42DA96B740065684F /* TaskTaxonomy.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B0F62A32DA96B650065684F /* TaskTaxonomy.json */; };
+		1B0F62A92DA973260065684F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62A82DA973220065684F /* CalendarView.swift */; };
+		1B0F62B52DAB762B0065684F /* CircularToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62B42DAB761D0065684F /* CircularToggleStyle.swift */; };
+		1B0F62B72DAC1EED0065684F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62B62DAC1EE80065684F /* Settings.swift */; };
+		1B0F62B92DAC21D90065684F /* RecommendedPlaylistRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62B82DAC21BD0065684F /* RecommendedPlaylistRow.swift */; };
+		1B0F62BB2DAC225F0065684F /* FocusInsights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62BA2DAC22530065684F /* FocusInsights.swift */; };
+		1B0F62BD2DAC27310065684F /* Menubar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F62BC2DAC272F0065684F /* Menubar.swift */; };
 		1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */; };
 		1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13E9C12C3E22CB00F79670 /* ContentView.swift */; };
 		1B13E9C42C3E22CD00F79670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B13E9C32C3E22CD00F79670 /* Assets.xcassets */; };
@@ -32,6 +42,16 @@
 		1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyService.swift; sourceTree = "<group>"; };
 		1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicControlBar.swift; sourceTree = "<group>"; };
 		1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B0BE6992DA6345300E29CEB /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		1B0BE69B2DA6349A00E29CEB /* EventStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStoreManager.swift; sourceTree = "<group>"; };
+		1B0BE69D2DA635AB00E29CEB /* CalendarEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvents.swift; sourceTree = "<group>"; };
+		1B0F62A32DA96B650065684F /* TaskTaxonomy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TaskTaxonomy.json; sourceTree = "<group>"; };
+		1B0F62A82DA973220065684F /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		1B0F62B42DAB761D0065684F /* CircularToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularToggleStyle.swift; sourceTree = "<group>"; };
+		1B0F62B62DAC1EE80065684F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		1B0F62B82DAC21BD0065684F /* RecommendedPlaylistRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedPlaylistRow.swift; sourceTree = "<group>"; };
+		1B0F62BA2DAC22530065684F /* FocusInsights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusInsights.swift; sourceTree = "<group>"; };
+		1B0F62BC2DAC272F0065684F /* Menubar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menubar.swift; sourceTree = "<group>"; };
 		1B13E9BC2C3E22CB00F79670 /* Tracky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tracky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B13E9BF2C3E22CB00F79670 /* TrackyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackyApp.swift; sourceTree = "<group>"; };
 		1B13E9C12C3E22CB00F79670 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +79,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B0F62A22DA96B560065684F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B0F62A32DA96B650065684F /* TaskTaxonomy.json */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1B0F62B32DAB760E0065684F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1B0F62B42DAB761D0065684F /* CircularToggleStyle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1B13E9B32C3E22CB00F79670 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +115,7 @@
 		1B13E9BE2C3E22CB00F79670 /* Tracky */ = {
 			isa = PBXGroup;
 			children = (
+				1B0F62B32DAB760E0065684F /* Components */,
 				1B0BE6972DA1DCCE00E29CEB /* AppDelegate.swift */,
 				1B760F9D2C44A2D400C879E8 /* Info.plist */,
 				1B760F902C41B0AE00C879E8 /* ViewModel */,
@@ -104,6 +141,12 @@
 		1B760F8D2C40C6A700C879E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1B0F62BC2DAC272F0065684F /* Menubar.swift */,
+				1B0F62BA2DAC22530065684F /* FocusInsights.swift */,
+				1B0F62B82DAC21BD0065684F /* RecommendedPlaylistRow.swift */,
+				1B0F62B62DAC1EE80065684F /* Settings.swift */,
+				1B0F62A82DA973220065684F /* CalendarView.swift */,
+				1B0BE69D2DA635AB00E29CEB /* CalendarEvents.swift */,
 				1B0BE6862DA1D2D300E29CEB /* MusicControlBar.swift */,
 				1B0BE6792DA0F86700E29CEB /* Dashboard.swift */,
 			);
@@ -113,8 +156,10 @@
 		1B760F8E2C40C6B000C879E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE6992DA6345300E29CEB /* EventStore.swift */,
 				1B0BE6842DA1D2B500E29CEB /* SpotifyService.swift */,
 				1B0BE6752DA0F80B00E29CEB /* OpenAIService.swift */,
+				1B0F62A22DA96B560065684F /* Utils */,
 				1B0BE6712DA0F78A00E29CEB /* AttentionRecord.swift */,
 			);
 			path = Model;
@@ -123,6 +168,7 @@
 		1B760F902C41B0AE00C879E8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1B0BE69B2DA6349A00E29CEB /* EventStoreManager.swift */,
 				1B0BE6732DA0F7B800E29CEB /* ActivityTrackingManager.swift */,
 				1B0BE67D2DA102A300E29CEB /* CameraTrackingManager.swift */,
 				1B0BE6772DA0F83100E29CEB /* MenuBarController.swift */,
@@ -174,6 +220,8 @@
 				Base,
 			);
 			mainGroup = 1B13E9B32C3E22CB00F79670;
+			packageReferences = (
+			);
 			productRefGroup = 1B13E9BD2C3E22CB00F79670 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -189,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B13E9C72C3E22CD00F79670 /* Preview Assets.xcassets in Resources */,
+				1B0F62A42DA96B740065684F /* TaskTaxonomy.json in Resources */,
 				1B13E9C42C3E22CD00F79670 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,15 +250,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0BE6982DA1DCD500E29CEB /* AppDelegate.swift in Sources */,
+				1B0F62B52DAB762B0065684F /* CircularToggleStyle.swift in Sources */,
 				1B0BE6852DA1D2BE00E29CEB /* SpotifyService.swift in Sources */,
+				1B0F62B72DAC1EED0065684F /* Settings.swift in Sources */,
+				1B0F62BB2DAC225F0065684F /* FocusInsights.swift in Sources */,
+				1B0F62B92DAC21D90065684F /* RecommendedPlaylistRow.swift in Sources */,
+				1B0BE69E2DA635C000E29CEB /* CalendarEvents.swift in Sources */,
+				1B0BE69A2DA6345900E29CEB /* EventStore.swift in Sources */,
 				1B0BE67E2DA102A900E29CEB /* CameraTrackingManager.swift in Sources */,
+				1B0F62A92DA973260065684F /* CalendarView.swift in Sources */,
 				1B13E9C22C3E22CB00F79670 /* ContentView.swift in Sources */,
 				1B0BE6872DA1D2E000E29CEB /* MusicControlBar.swift in Sources */,
 				1B0BE6762DA0F81400E29CEB /* OpenAIService.swift in Sources */,
 				1B0BE6722DA0F79900E29CEB /* AttentionRecord.swift in Sources */,
+				1B0F62BD2DAC27310065684F /* Menubar.swift in Sources */,
 				1B0BE6742DA0F7C100E29CEB /* ActivityTrackingManager.swift in Sources */,
 				1B0BE6782DA0F83700E29CEB /* MenuBarController.swift in Sources */,
 				1B0BE67A2DA0F86E00E29CEB /* Dashboard.swift in Sources */,
+				1B0BE69C2DA634A000E29CEB /* EventStoreManager.swift in Sources */,
 				1B13E9C02C3E22CB00F79670 /* TrackyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
