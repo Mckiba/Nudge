@@ -23,6 +23,7 @@ class NudgeCoordinator: ObservableObject {
     @Published var confidenceLevel: Double = 0.0
     @Published var activeInsights: [String] = []
     @Published var systemStatus: SystemStatus = .initializing
+    @Published var attentionScoreDisplay: String = "Inactive"
     
     // Session timing
     @Published var sessionStartTime: Date?
@@ -74,6 +75,14 @@ class NudgeCoordinator: ObservableObject {
                 self?.currentAttentionScore = score
                 self?.confidenceLevel = confidence
                 self?.activeInsights = insights
+                self?.updateAttentionScoreDisplay()
+            }
+            .store(in: &cancellables)
+        
+        // Subscribe to active state changes to update attention display
+        $isActive
+            .sink { [weak self] _ in
+                self?.updateAttentionScoreDisplay()
             }
             .store(in: &cancellables)
         
@@ -268,6 +277,18 @@ class NudgeCoordinator: ObservableObject {
             return String(format: "%d:%02d:%02d", hours, minutes, seconds)
         } else {
             return String(format: "%02d:%02d", minutes, seconds)
+        }
+    }
+    
+    private func updateAttentionScoreDisplay() {
+        if !isActive {
+            attentionScoreDisplay = "Inactive"
+        } else if currentAttentionScore > 0.7 {
+            attentionScoreDisplay = "High Attention"
+        } else if currentAttentionScore > 0.4 {
+            attentionScoreDisplay = "Medium Attention"
+        } else {
+            attentionScoreDisplay = "Low Attention"
         }
     }
     
