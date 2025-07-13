@@ -32,10 +32,10 @@ struct ContentView: View {
             ControlsView(coordinator: coordinator)
             
             // Insights
-            InsightsView(coordinator: coordinator)
+            //InsightsView(coordinator: coordinator)
             
             //Camera Context
-            CameraContextView(coordinator: coordinator)
+            //CameraContextView(coordinator: coordinator)
             
             Spacer()
         }
@@ -113,6 +113,21 @@ struct StatusCard: View {
                             .fontWeight(.semibold)
                     }
                 }
+                
+                // Session Duration
+                HStack {
+                    Image(systemName: "clock")
+                        .foregroundColor(.blue)
+                    Text("Session Duration")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                    Text(coordinator.formattedSessionDuration)
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .foregroundColor(.primary)
+                }
+                .padding(.top, 8)
             }
         }
         .padding()
@@ -183,6 +198,8 @@ struct AttentionMetricsView: View {
                 let metrics = coordinator.getAttentionMetrics()
                 
                 VStack(spacing: 8) {
+                    
+                    
                     MetricRow(label: "Face Detection", value: metrics.faceDetected ? "✓" : "✗")
                     MetricRow(label: "Eye Openness", value: "\(safePercentage(metrics.eyeOpenness))%")
                     MetricRow(label: "Gaze Direction", value: metrics.gazeDirection.capitalized)

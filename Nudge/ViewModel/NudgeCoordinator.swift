@@ -24,12 +24,19 @@ class NudgeCoordinator: ObservableObject {
     @Published var activeInsights: [String] = []
     @Published var systemStatus: SystemStatus = .initializing
     
+    // Session timing
+    @Published var sessionStartTime: Date?
+    @Published var sessionDuration: TimeInterval = 0
+    @Published var formattedSessionDuration: String = "00:00"
+    
     // SwiftData
     var modelContext: ModelContext?
     
     private var cancellables = Set<AnyCancellable>()
     private var sessionTimer: Timer?
+    private var sessionDisplayTimer: Timer?
     private let sessionInterval: TimeInterval = 60.0 // Save session data every minute
+    private let displayUpdateInterval: TimeInterval = 1.0 // Update display every second
     private var currentSessionId: UUID = UUID()
     private var currentSessionStates: [AttentionState] = []
     private var currentSessionContextualData: [ContextualData] = []
@@ -210,17 +217,58 @@ class NudgeCoordinator: ObservableObject {
         currentSessionId = UUID()
         currentSessionStates = []
         currentSessionContextualData = []
+        sessionStartTime = Date()
+        sessionDuration = 0
+        formattedSessionDuration = "00:00"
         
+        // Timer for saving session data
         sessionTimer = Timer.scheduledTimer(withTimeInterval: sessionInterval, repeats: true) { [weak self] _ in
-            self?.saveCurrentSession()
+            Task { @MainActor in
+                self?.saveCurrentSession()
+            }
+        }
+        
+        // Timer for updating session duration display
+        sessionDisplayTimer = Timer.scheduledTimer(withTimeInterval: displayUpdateInterval, repeats: true) { [weak self] _ in
+            Task { @MainActor in
+                self?.updateSessionDuration()
+            }
         }
     }
     
     private func stopSessionTracking() {
         sessionTimer?.invalidate()
         sessionTimer = nil
+        sessionDisplayTimer?.invalidate()
+        sessionDisplayTimer = nil
+        
         saveCurrentSession() // Save final session data
         exportSessionToJSON() // Export session data to JSON
+        
+        // Reset session timing
+        sessionStartTime = nil
+        sessionDuration = 0
+        formattedSessionDuration = "00:00"
+    }
+    
+    private func updateSessionDuration() {
+        guard let startTime = sessionStartTime else { return }
+        
+        sessionDuration = Date().timeIntervalSince(startTime)
+        formattedSessionDuration = formatSessionDuration(sessionDuration)
+    }
+    
+    private func formatSessionDuration(_ duration: TimeInterval) -> String {
+        let totalSeconds = Int(duration)
+        let hours = totalSeconds / 3600
+        let minutes = (totalSeconds % 3600) / 60
+        let seconds = totalSeconds % 60
+        
+        if hours > 0 {
+            return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        } else {
+            return String(format: "%02d:%02d", minutes, seconds)
+        }
     }
     
     private func saveCurrentSession() {

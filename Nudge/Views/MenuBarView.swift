@@ -15,10 +15,10 @@ class MenuBarManager: ObservableObject {
     }
     
     @MainActor private func setupObservers() {
-        // Update menu bar icon when attention score or active state changes
+        // Update menu bar icon when attention score, active state, or session duration changes
         coordinator.$currentAttentionScore
-            .combineLatest(coordinator.$isActive)
-            .sink { [weak self] _, _ in
+            .combineLatest(coordinator.$isActive, coordinator.$formattedSessionDuration)
+            .sink { [weak self] _, _, _ in
                 self?.updateMenuBarIcon()
             }
             .store(in: &cancellables)
@@ -59,6 +59,7 @@ class MenuBarManager: ObservableObject {
         DispatchQueue.main.async {
             let attentionScore = self.coordinator.currentAttentionScore
             let isActive = self.coordinator.isActive
+            let sessionDuration = self.coordinator.formattedSessionDuration
             
             if !isActive {
                 // Inactive state - gray circle
@@ -67,15 +68,15 @@ class MenuBarManager: ObservableObject {
             } else if attentionScore > 0.7 {
                 // High attention - green circle
                 statusButton.image = self.createStatusImage(color: .systemGreen, symbol: "circle.fill")
-                statusButton.toolTip = "Nudge - High Attention (\(Int(attentionScore * 100))%)"
+                statusButton.toolTip = "Nudge - High Attention (\(Int(attentionScore * 100))%) - Session: \(sessionDuration)"
             } else if attentionScore > 0.4 {
                 // Medium attention - orange circle
                 statusButton.image = self.createStatusImage(color: .systemOrange, symbol: "circle.fill")
-                statusButton.toolTip = "Nudge - Medium Attention (\(Int(attentionScore * 100))%)"
+                statusButton.toolTip = "Nudge - Medium Attention (\(Int(attentionScore * 100))%) - Session: \(sessionDuration)"
             } else {
                 // Low attention - red circle
                 statusButton.image = self.createStatusImage(color: .systemRed, symbol: "circle.fill")
-                statusButton.toolTip = "Nudge - Low Attention (\(Int(attentionScore * 100))%)"
+                statusButton.toolTip = "Nudge - Low Attention (\(Int(attentionScore * 100))%) - Session: \(sessionDuration)"
             }
         }
     }
@@ -139,6 +140,20 @@ struct MenuBarPopoverView: View {
                 }
             }
             .padding(.horizontal)
+            
+            // Session duration when active
+            if coordinator.isActive {
+                HStack {
+                    Image(systemName: "clock")
+                        .foregroundColor(.blue)
+                        .font(.caption)
+                    Text("Session Duration: \(coordinator.formattedSessionDuration)")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    Spacer()
+                }
+                .padding(.horizontal)
+            }
             
             // Camera Context View
             CameraContextView(coordinator: coordinator)

@@ -49,9 +49,7 @@ class ScreenActivityMonitor: ObservableObject {
         
         stopMonitoring() // Ensure we don't have duplicate timers
         isMonitoringActive = true
-        
-        print("[DEBUG] Screen activity monitoring started")
-        
+                
         activityTimer = Timer.scheduledTimer(withTimeInterval: monitoringInterval, repeats: true) { [weak self] _ in
             self?.updateActivityMetrics()
         }
@@ -66,8 +64,6 @@ class ScreenActivityMonitor: ObservableObject {
         activityTimer = nil
         
         teardownInputMonitoring()
-        
-        print("[DEBUG] Screen activity monitoring stopped")
     }
     
     private func setupInputMonitoring() {
